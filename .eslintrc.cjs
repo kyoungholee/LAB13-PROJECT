@@ -22,6 +22,13 @@ module.exports = {
   rules: {
     'no-unused-vars': 'warn',
     'import/no-unresolved': 'off',
-    'import/no-extraneous-dependencies': ['error', { devDependencies: true }],
+    'import/no-extraneous-dependencies': [
+      'error',
+      {
+        devDependencies: false,
+        optionalDependencies: false,
+        peerDependencies: false,
+      },
+    ],
   },
 };

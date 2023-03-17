@@ -1,0 +1,43 @@
+.swiper .swiper-button-prev::after,
+.swiper .swiper-button-next::after {
+  margin-bottom: 60px;
+  color: #e1e1e1;
+}
+
+.swiper-slide div {
+  margin-top: 10px;
+  transition: all 0.2s linear;
+}
+
+.swiper-slide:hover div {
+  transform: translate(0px, -10px);
+}
+
+.swiper div[role='button'] {
+  opacity: 0;
+  transition: all 0.3s ease-in-out;
+}
+
+.swiper:hover div[role='button'],
+.swiper:focus-within div[role='button'] {
+  opacity: 1;
+}
+.contentsName {
+  display: block;
+  font-weight: 600;
+  font-size: 21px;
+  line-height: 150%;
+  color: #c4c4c4;
+  text-align: left;
+}
+
+.list_title {
+  width: 315px;
+  height: 40px;
+  font-style: normal;
+  font-weight: 700;
+  font-size: 28.43px;
+  line-height: 140%;
+  margin-bottom: 12px;
+  color: blue;
+}
