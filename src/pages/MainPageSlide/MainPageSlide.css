@@ -4,22 +4,28 @@
   color: #e1e1e1;
 }
 
+.swiper-wrapper {
+  cursor: pointer;
+}
 .swiper-slide div {
-  margin-top: 10px;
   transition: all 0.2s linear;
 }
 
 .swiper-slide:hover div {
   transform: translate(0px, -10px);
 }
-
 .swiper div[role='button'] {
   opacity: 0;
   transition: all 0.3s ease-in-out;
 }
 
-.swiper:hover div[role='button'],
-.swiper:focus-within div[role='button'] {
+.swiper div[tabindex='-1'] {
+  opacity: 0;
+  transition: all 0.3s ease-in-out;
+}
+
+.swiper:hover div[tabindex='0'],
+.swiper:focus-within div[tabindex='0'] {
   opacity: 1;
 }
 .contentsName {
@@ -39,5 +45,5 @@
   font-size: 28.43px;
   line-height: 140%;
   margin-bottom: 12px;
-  color: blue;
+  color: white;
 }

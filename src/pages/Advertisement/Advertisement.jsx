@@ -1,5 +1,4 @@
 import React from 'react';
-import style from './Advertisement.module.css';
 import banner from '../../assets/images/bigbanner_03.jpg';
 
 export default function Advertisement() {
