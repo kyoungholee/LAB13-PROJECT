@@ -15,7 +15,6 @@ export default function PopularProgramSlide() {
   const numberUrl = '../src/assets/images/numbers/';
 
   const FilterData = useDataFilter('slide');
-  const test = 1;
 
   return (
     <div className="swiper-title">
@@ -37,7 +36,7 @@ export default function PopularProgramSlide() {
         slidesPerGroup={6}
         navigation
       >
-        {FilterData?.map(contents => (
+        {FilterData?.map((contents, index) => (
           <SwiperSlide key={contents.id}>
             <div>
               <Link to={`${contents.src.slide}/${contents.id}`}>
@@ -48,7 +47,7 @@ export default function PopularProgramSlide() {
                 <p className="text-title">
                   <img
                     style={{ 'margin-top': '-24px' }}
-                    src={`${numberUrl}${test}.png`}
+                    src={`${numberUrl}${index + 1}.png`}
                     alt="숫자 사진"
                   />
                   <span className="contentsName">{contents.name}</span>
