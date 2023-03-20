@@ -5,6 +5,7 @@ import { Link } from 'react-router-dom';
 import './MainPageSlide.css';
 import 'swiper/swiper.css';
 import 'swiper/css/navigation';
+import { ErrorBoundary } from 'react-error-boundary';
 import QuickVodSlide from '../QuickVodSlide/QuickVodSlide';
 import PopularProgramSlide from '../PopularProgramSlide/PopularProgramSlide';
 import LiveChannel from '../LiveChannel/LiveChannel';
@@ -57,7 +58,11 @@ export default function MainPageSlide() {
         </Swiper>
       </div>
       <QuickVodSlide />
-      <PopularProgramSlide />
+      <ErrorBoundary
+        fallback={<div style={{ color: 'red', height: 325 }}>비상!</div>}
+      >
+        <PopularProgramSlide />
+      </ErrorBoundary>
       <LiveChannel />
       <OnlyTaing />
       <Advertisement />

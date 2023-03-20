@@ -37,26 +37,30 @@ export default function PopularProgramSlide() {
         slidesPerGroup={6}
         navigation
       >
-        {FilterData?.map(contents => (
-          <SwiperSlide key={contents.id}>
-            <div>
-              <Link to={`${contents.src.slide}/${contents.id}`}>
-                <img
-                  src={`${baseUrl}${contents.src.slide}.jpg`}
-                  alt={`${contents.name}`}
-                />
-                <p className="text-title">
+        {FilterData?.length <= 0 ? (
+          <div style={{ height: 345, width: '100vw' }}>로딩중</div>
+        ) : (
+          FilterData?.map((contents, index) => (
+            <SwiperSlide key={contents.id}>
+              <div>
+                <Link to={`${contents.src.slide}/${contents.id}`}>
                   <img
-                    style={{ 'margin-top': '-24px' }}
-                    src={`${numberUrl}${test}.png`}
-                    alt="숫자 사진"
+                    src={`${baseUrl}${contents.src.slide}.jpg`}
+                    alt={`${contents.name}`}
                   />
-                  <span className="contentsName">{contents.name}</span>
-                </p>
-              </Link>
-            </div>
-          </SwiperSlide>
-        ))}
+                  <p className="text-title">
+                    <img
+                      style={{ 'margin-top': '-24px' }}
+                      src={`${numberUrl}${index + 1}.png`}
+                      alt="숫자 사진"
+                    />
+                    <span className="contentsName">{contents.name}</span>
+                  </p>
+                </Link>
+              </div>
+            </SwiperSlide>
+          ))
+        )}
       </Swiper>
     </div>
   );
