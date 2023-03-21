@@ -1,10 +1,13 @@
 .swiper .swiper-button-prev::after,
 .swiper .swiper-button-next::after {
-  margin-bottom: 60px;
+  margin-bottom: 30;
   color: #e1e1e1;
 }
+.swiper-title {
+  background-color: black;
+}
 
-.swiper-wrapper {
+.swiper {
   cursor: pointer;
 }
 .swiper-slide div {
@@ -29,21 +32,18 @@
   opacity: 1;
 }
 .contentsName {
-  display: block;
-  font-weight: 600;
-  font-size: 21px;
+  margin-top: unset;
   line-height: 150%;
   color: #c4c4c4;
   text-align: left;
 }
 
 .list_title {
-  width: 315px;
+  width: 400px;
   height: 40px;
   font-style: normal;
   font-weight: 700;
   font-size: 28.43px;
   line-height: 140%;
   margin-bottom: 12px;
-  color: white;
 }

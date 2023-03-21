@@ -4,7 +4,6 @@ import SwiperCore, { Navigation, Pagination, A11y } from 'swiper';
 import { Link } from 'react-router-dom';
 import 'swiper/swiper.css';
 import 'swiper/css/navigation';
-import './EventSlide.css';
 import useDataFilter from '../../hooks/useDataFilter';
 
 SwiperCore.use([Navigation, Pagination, A11y]);
@@ -17,7 +16,7 @@ export default function EventSlide() {
     <>
       <div>
         <h2
-          style={{ 'margin-left': '60px', 'margin-bottom': '8px' }}
+          style={{ 'margin-left': '44px', 'margin-bottom': '8px' }}
           className="list_title"
         >
           이벤트

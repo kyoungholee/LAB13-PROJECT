@@ -1,8 +1,10 @@
 .text-title {
   display: flex;
+  margin: auto;
+  z-index: 100;
 }
 .contentsName {
-  display: block;
+  display: inline;
   font-weight: 600;
   font-size: 21px;
   line-height: 150%;
@@ -11,6 +13,7 @@
 }
 
 .list_title {
+  display: block;
   width: 315px;
   height: 40px;
   font-style: normal;

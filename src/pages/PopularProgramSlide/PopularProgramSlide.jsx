@@ -19,7 +19,7 @@ export default function PopularProgramSlide() {
   return (
     <div className="swiper-title">
       <h2
-        style={{ 'margin-left': '60px', 'margin-bottom': '8px' }}
+        style={{ 'margin-left': '44px', 'margin-bottom': '8px' }}
         className="list_title"
       >
         실시간 인기 프로그램
@@ -39,19 +39,26 @@ export default function PopularProgramSlide() {
         {FilterData?.map((contents, index) => (
           <SwiperSlide key={contents.id}>
             <div>
-              <Link to={`${contents.src.slide}/${contents.id}`}>
+              <Link
+                to={`${contents.src.slide}/${contents.id}`}
+                style={{ textDecoration: 'none' }}
+              >
                 <img
                   src={`${baseUrl}${contents.src.slide}.jpg`}
                   alt={`${contents.name}`}
                 />
-                <p className="text-title">
-                  <img
-                    style={{ 'margin-top': '-24px' }}
-                    src={`${numberUrl}${index + 1}.png`}
-                    alt="숫자 사진"
-                  />
-                  <span className="contentsName">{contents.name}</span>
-                </p>
+
+                <img
+                  style={{ 'margin-top': '-24px' }}
+                  src={`${numberUrl}${index + 1}.png`}
+                  alt="숫자 사진"
+                />
+                <span
+                  className="contentsName"
+                  style={{ display: 'inline', margin: 'auto' }}
+                >
+                  {contents.name}
+                </span>
               </Link>
             </div>
           </SwiperSlide>

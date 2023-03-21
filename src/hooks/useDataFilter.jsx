@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react';
-import { useReadData } from '../utils/firebase/index';
+import { useReadData } from '../utils/firebase/firestore/index';
 
 /**
  *

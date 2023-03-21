@@ -4,7 +4,6 @@ import SwiperCore, { Navigation, Pagination, A11y } from 'swiper';
 import { Link } from 'react-router-dom';
 import 'swiper/swiper.css';
 import 'swiper/css/navigation';
-import './LiveChannel.css';
 import useDataFilter from '../../hooks/useDataFilter';
 
 SwiperCore.use([Navigation, Pagination, A11y]);
@@ -18,7 +17,7 @@ export default function LiveChannel() {
     <>
       <div>
         <h2
-          style={{ 'margin-left': '60px', 'margin-bottom': '8px' }}
+          style={{ 'margin-left': '44px', 'margin-bottom': '8px' }}
           className="list_title"
         >
           인기 LIVE 채널
@@ -35,12 +34,14 @@ export default function LiveChannel() {
         slidesPerView={5.2}
         slidesPerGroup={5}
         navigation
-        pagination={{ clickable: true }}
       >
         {FilterData?.map(contents => (
           <SwiperSlide key={contents.id}>
             <div>
-              <Link to={`${contents.src.live}/${contents.id}`}>
+              <Link
+                to={`${contents.src.live}/${contents.id}`}
+                style={{ textDecoration: 'none' }}
+              >
                 <img
                   src={`${baseUrl}${contents.src.live}.jpg`}
                   alt={`${contents.name}`}

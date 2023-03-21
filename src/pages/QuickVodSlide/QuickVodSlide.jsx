@@ -4,7 +4,6 @@ import SwiperCore, { Navigation, Pagination, A11y } from 'swiper';
 import { Link } from 'react-router-dom';
 import 'swiper/swiper.css';
 import 'swiper/css/navigation';
-import './QuickVodSlide.css';
 // 커밋 내용 컨텐츠 호버했을때 살짝 튀어나오는 효과 및 왼쪽하단에 해당 컨텐츠 상세페이지 링크 출력 #16
 import useDataFilter from '../../hooks/useDataFilter';
 
@@ -15,15 +14,13 @@ export default function QuickVodSlide() {
 
   const FilterData = useDataFilter('quickslide');
   return (
-    <>
-      <div>
-        <h2
-          style={{ 'margin-left': '60px', 'margin-bottom': '8px' }}
-          className="list_title"
-        >
-          Quick VOD
-        </h2>
-      </div>
+    <div className="swiper-title">
+      <h2
+        style={{ 'margin-left': '44px', 'margin-bottom': '8px' }}
+        className="list_title"
+      >
+        Quick VOD
+      </h2>
 
       <Swiper
         style={{
@@ -39,7 +36,10 @@ export default function QuickVodSlide() {
         {FilterData?.map(contents => (
           <SwiperSlide key={contents.id}>
             <div>
-              <Link to={`${contents.src.quickslide}/${contents.id}`}>
+              <Link
+                to={`${contents.src.quickslide}/${contents.id}`}
+                style={{ textDecoration: 'none' }}
+              >
                 <img
                   src={`${baseUrl}${contents.src.quickslide}.jpg`}
                   alt={`${contents.name}`}
@@ -50,6 +50,6 @@ export default function QuickVodSlide() {
           </SwiperSlide>
         ))}
       </Swiper>
-    </>
+    </div>
   );
 }
