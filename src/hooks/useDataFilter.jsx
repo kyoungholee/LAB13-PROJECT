@@ -27,7 +27,5 @@ export default function useDataFilter(imageDataValue) {
     }
   }, [data, imageDataValue, readData]);
 
-  console.log(filterData);
-
   return filterData;
 }
